@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030718;
+  --foreground: #ffffff;
+
+  --bg-primary: #030718;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #6a53ff;
+  --bg-indigo: #6A54FF;
+
+  --color-dark: #030718;
+  --color-cyan: #57e0ff;
+  --color-purple: #6a53ff;
+  --color-white: #ffffff;
+  
+  /* Кольори тексту на темному фоні */
+  --text-dark-heading: #ffffff;
+  --text-dark-description: #b9c7cb;
+  --text-dark-muted: #4f515d;
+  --text-dark-menu: #b3b5ba;
+  --text-dark-section: #cdcdd1;
+  --text-dark-accent: #4B3DBA;
+
+  /* Кольори тексту на білому фоні */
+  --text-light-heading: #000000;
+  --text-light-gray: #353946;
+  --text-light-accent: #6a54ff;
+  --text-light-muted: #808080;
+  --text-light-stats: #333333;
+
+  /* Цвета текста на фиолетовом фоне */
+
+  --text-white-accent: #d2ccff;
+
+  /* Кольори футера */
+  --footer-nav-title: #686a74;
+  --footer-menu: #acadb3;
+  --footer-copyright: #81838b;
+  --footer-divider: #4f515d;
+
+  /* Цвета input-background */
+  --input-background: #201A4F;
+
+  /* Цвета кнопок-фон */
+  --button-primary-bg: #57e1ff;
+  --button-secondary-bg: #6670ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-ibm-plex-sans);
+
+  --bg-primary: var(--bg-primary);
+  --bg-secondary: var(--bg-secondary);
+  --bg-tertiary: var(--bg-tertiary);
+  --bg-purple: var(--bg-indigo);
+
+  --color-dark: var(--color-dark);
+  --color-cyan: var(--color-cyan);
+  --color-purple: var(--color-purple);
+  --color-white: var(--color-white);
+
+  /* Цвета текста на темном фоне */
+  --text-dark-heading: var(--text-dark-heading);
+  --text-dark-description: var(--text-dark-description);
+  --text-dark-muted: var(--text-dark-muted);
+  --text-dark-menu: var(--text-dark-menu);
+  --text-dark-section: var(--text-dark-section);
+  --text-dark-accent: var(--text-dark-accent);
+
+  /* Цвета текста на светлом фоне */
+  --text-light-heading: var(--text-light-heading);
+  --text-light-gray: var(--text-light-gray);
+  --text-light-accent: var(--text-light-accent);
+  --text-light-muted: var(--text-light-muted);
+
+  /* Цвета текста на фиолетовом фоне */
+  --text-white-accent: var(--text-white-accent);
+
+  /* Цвета input-background */
+  --input-background: vars;
+
+  /* Цвета футера */
+  --footer-nav-title: var(--footer-nav-title);
+  --footer-menu: var(--footer-menu);
+  --footer-copyright: var(--footer-copyright);
+
+  --button-primary-bg: var(--button-primary-bg);
+  --button-secondary-bg: var(--button-secondary-bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: var(--bg-primary);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.stats-clip-path {
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+}
+
+@media (min-width: 768px) {
+  .stats-clip-path {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+  }
+}
+
+
+
