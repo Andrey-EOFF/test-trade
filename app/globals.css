@@ -45,6 +45,9 @@
   /* Цвета кнопок-фон */
   --button-primary-bg: #57e1ff;
   --button-secondary-bg: #6670ff;
+
+  /* Акценты */
+  --color-accent-green: #35FF9E;
 }
 
 @theme inline {
@@ -89,6 +92,9 @@
 
   --button-primary-bg: var(--button-primary-bg);
   --button-secondary-bg: var(--button-secondary-bg);
+
+   /* Акценты */
+   --color-accent-green: var(--color-accent-green);
 }
 
 html {
@@ -112,6 +118,10 @@ body {
   .stats-clip-path {
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
   }
+}
+
+.deal-card-clip {
+  clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%);
 }
 
 
