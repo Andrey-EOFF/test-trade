@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-150 header-full-width bg-(--bg-primary)">
+    <header className="sticky top-0 z-150 header-full-width bg-(--bg-primary) p-1">
       <div className="mx-auto px-[10px] md:px-20">
         <div className="relative flex h-[52px] md:h-[64px] items-center justify-between">
           <div className="flex items-center gap-2 flex-1 md:flex-initial relative">
