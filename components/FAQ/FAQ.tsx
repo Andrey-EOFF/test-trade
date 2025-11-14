@@ -19,7 +19,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="w-full bg-(--bg-secondary) px-4 py-6 md:py-12 lg:py-16 md:px-20">
+    <section id="faq" className="w-full bg-(--bg-secondary) px-4 py-6 md:py-12 lg:py-16 md:px-20">
       <div className="w-full max-w-4xl mx-auto">
         <div className="mb-8 md:mb-12 text-center">
           <SectionHeading variant="light">Часті питання</SectionHeading>
