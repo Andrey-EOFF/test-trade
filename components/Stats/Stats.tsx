@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/ui/SectionHeading";
+
 export default function Stats() {
   return (
     <section className="w-full bg-(--bg-secondary) relative ">
@@ -5,9 +7,9 @@ export default function Stats() {
       <div className="w-full flex flex-col md:flex-row min-h-0 px-4 py-6 md:py-12 lg:py-16 md:px-20 ">
         <div className="w-full md:w-auto md:min-w-[320px] lg:min-w-[400px] bg-(--bg-secondary)hrink-0">
           <div className="md:h-full md:flex md:flex-col md:justify-center mb-10 md:mb-0">
-            <h2 className="text-(--text-light-heading) text-3xl md:text-5xl font-bold uppercase leading-14 mb-0.5 md:mb-1">
+            <SectionHeading className="text-(--text-dark-heading)">
               ЦИФРЫ
-            </h2>
+            </SectionHeading>
             <p className="text-(--text-light-muted) text-sm md:text-base lg:text-lg font-normal leading-5">
               Сентябрь 2022
             </p>
