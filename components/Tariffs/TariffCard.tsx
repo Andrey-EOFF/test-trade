@@ -31,7 +31,7 @@ export default function TariffCard({
       </h3>
 
       <div className="flex flex-col justify-between h-full">
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4 mb-8 md:mb-0">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2.5">
               <svg
@@ -57,7 +57,7 @@ export default function TariffCard({
           ))}
         </ul>
 
-        <div>
+        <div className="mt-auto">
           <div className="flex justify-between items-center gap-4 mb-6">
             <div className="flex items-baseline gap-2">
               <span className="text-white text-3xl md:text-4xl font-bold">

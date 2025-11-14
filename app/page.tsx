@@ -11,9 +11,7 @@ export default function Home() {
     <main>
       <Baner />
       <Stats />
-      {/* <div className="-mr-4 md:-mr-20"> */}
       <PastDeals />
-      {/* </div> */}
       <AboutCompany />
       <Tariffs />
       <FAQ />
