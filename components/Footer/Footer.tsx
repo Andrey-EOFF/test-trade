@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { sectionMap, scrollToSection } from "@/lib/scroll";
+import { showDevelopmentMessage } from "@/components/ui/DevelopmentMessage";
 
 const footerNavItems = [
   { href: "/numbers", label: "ЦИФРЫ" },
@@ -14,35 +18,48 @@ const footerNavItems = [
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const handleLinkClick = (
+    href: string,
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    e.preventDefault();
+
+    const sectionId = sectionMap[href];
+    if (sectionId) {
+      scrollToSection(sectionId);
+    } else {
+      showDevelopmentMessage();
+    }
+  };
+
   return (
-    <footer className="w-full footer-full-width ">
-      <div className="mx-auto ">
-        <div className="flex flex-col gap-8 pb-[57px] md:pb-0 pt-10 md:pt-0 md:flex-row md:items-stretch md:justify-between">
-          <div className="flex md:flex-col gap-[84px] px-4 md:px-0 md:ml-20 md:py-10">
+    <footer className="w-full footer-full-width">
+      <div className="mx-auto">
+        <div className="flex flex-col gap-6 sm:gap-8 pb-[57px] sm:pb-12 md:pb-0 pt-8 sm:pt-10 md:pt-0 lg:flex-row lg:items-stretch lg:justify-between">
+          <div className="flex sm:flex-row lg:flex-col gap-8 sm:gap-12 lg:gap-[60px] xl:gap-[84px] px-4 sm:px-6 md:px-8 lg:px-0 lg:ml-12 xl:ml-20 lg:py-8 xl:py-10">
             <h3
-              className="text-sm font-normal uppercase leading-5"
+              className="text-sm font-normal uppercase leading-5 shrink-0"
               style={{ color: "var(--footer-nav-title)" }}
             >
               БЫСТРАЯ
               <br />
               НАВИГАЦИЯ
             </h3>
-            <nav className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6 md:flex-nowrap">
+            <nav className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-3 sm:gap-4 md:gap-5 lg:gap-6 sm:items-center">
               {footerNavItems.map((item) => (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
-                  className="text-(--footer-menu) text-base font-medium leading-5 transition-colors duration-200 hover:text-[#57E0FF] md:whitespace-nowrap"
+                  onClick={(e) => handleLinkClick(item.href, e)}
+                  className="text-(--footer-menu) text-sm sm:text-base font-medium leading-5 transition-colors duration-200 hover:text-[#57E0FF] whitespace-nowrap cursor-pointer"
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
             </nav>
           </div>
 
-          {/* <div className="hidden md:block self-stretch w-px bg-white/30 mx-8 " /> */}
-
-          <div className="hidden md:flex flex-col justify-between items-end md:mr-20 self-stretch border-l md:border-white/30 md:pl-[166px] md:py-10 ">
+          <div className="hidden lg:flex flex-col justify-between items-end lg:mr-12 xl:mr-20 self-stretch border-l border-white/30 lg:pl-12 xl:pl-20 2xl:pl-[166px] lg:py-8 xl:py-10">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo-trade.svg"
@@ -53,7 +70,7 @@ export function Footer() {
               />
             </Link>
             <p
-              className="text-sm font-normal leading-5 md:whitespace-nowrap"
+              className="text-xs lg:text-sm font-normal leading-5 whitespace-nowrap"
               style={{ color: "var(--footer-copyright)" }}
             >
               © {currentYear} TradeBlade. All rights reserved
@@ -61,20 +78,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="py-5 px-4 border-t border-white/30 flex flex-col justify-between md:hidden">
-          <div className="flex items-center mb-20">
+        <div className="py-4 sm:py-5 px-4 sm:px-6 border-t border-white/30 flex flex-col justify-between lg:hidden">
+          <div className="flex items-center mb-12 sm:mb-16 md:mb-20">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo-trade.svg"
                 alt="TRADE BLADE"
-                width={80}
-                height={80}
-                className="h-[80px] w-auto"
+                width={60}
+                height={60}
+                className="h-[60px] sm:h-[70px] md:h-[80px] w-auto"
               />
             </Link>
           </div>
           <p
-            className="text-sm font-normal leading-5 text-start"
+            className="text-xs sm:text-sm font-normal leading-5 text-start"
             style={{ color: "var(--footer-copyright)" }}
           >
             © {currentYear} TradeBlade. All rights reserved

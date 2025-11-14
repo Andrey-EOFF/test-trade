@@ -25,7 +25,7 @@ export default function Tariffs() {
   ];
 
   return (
-    <section className="w-full bg-(--bg-primary) px-4 py-6 md:py-20  flex flex-col items-center mx-auto">
+    <section id="tariffs" className="w-full bg-(--bg-primary) px-4 py-6 md:py-20  flex flex-col items-center mx-auto">
       <div className="flex flex-col md:items-center w-full">
         <div>
           <div className="flex flex-col items-start mb-8 md:mb-12">

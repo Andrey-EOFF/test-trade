@@ -99,7 +99,10 @@ export default function PastDeals() {
   }, [isPaused]);
 
   return (
-    <section className="w-full bg-(--bg-primary) pt-12 md:pt-20 pb-19 md:pb-45 px-4 md:px-20">
+    <section
+      id="deals"
+      className="w-full bg-(--bg-primary) pt-12 md:pt-20 pb-19 md:pb-45 pl-4 md:pl-20 pr-0"
+    >
       <div className="w-full">
         <div className="flex flex-col items-start gap-0.5 md:gap-1 mb-6 md:mb-18">
           <SectionHeading variant="dark">ПРОШЕДШИЕ СДЕЛКИ</SectionHeading>

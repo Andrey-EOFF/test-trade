@@ -84,8 +84,9 @@
   --text-white-accent: var(--text-white-accent);
 
   /* Цвета input-background */
-  --input-background: vars;
-  --input-tertiary-bg: var(--input-tertiary-bg);
+  --input-background: #201A4F;
+  --input-tertiary-bg: #4A3BB3;
+  
   /* Цвета футера */
   --footer-nav-title: var(--footer-nav-title);
   --footer-menu: var(--footer-menu);
@@ -170,6 +171,17 @@ body {
 
   .deals-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(67, 79, 112, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
