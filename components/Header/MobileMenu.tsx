@@ -27,7 +27,7 @@ export function MobileMenu() {
     <>
       <button
         onClick={toggleMenu}
-        className="md:hidden p-2 text-white hover:text-[#57E0FF] transition-colors"
+        className="lg:hidden p-2 text-white hover:text-[#57E0FF] transition-colors"
         aria-label="Toggle menu"
       >
         <Menu size={32} />
@@ -35,7 +35,7 @@ export function MobileMenu() {
 
       <div
         className={cn(
-          "fixed inset-0 z-50 md:hidden transition-opacity duration-300",
+          "fixed inset-0 z-50 lg:hidden transition-opacity duration-300",
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         )}
       >

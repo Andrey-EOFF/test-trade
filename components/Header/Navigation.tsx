@@ -1,5 +1,8 @@
-import Link from "next/link";
+"use client";
+
 import { cn } from "@/lib/utils";
+import { sectionMap, scrollToSection } from "@/lib/scroll";
+import { showDevelopmentMessage } from "@/components/ui/DevelopmentMessage";
 
 interface NavigationProps {
   className?: string;
@@ -19,11 +22,36 @@ const navItems = [
 export function Navigation({ className, onLinkClick }: NavigationProps) {
   const isMobile = className?.includes("flex-col");
 
+  const handleClick = (
+    href: string,
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    e.preventDefault();
+
+    if (onLinkClick) {
+      onLinkClick();
+    }
+
+    const sectionId = sectionMap[href];
+    if (sectionId) {
+      setTimeout(
+        () => {
+          scrollToSection(sectionId);
+        },
+        isMobile ? 300 : 0
+      );
+    } else {
+      showDevelopmentMessage();
+    }
+  };
+
   return (
     <nav
       className={cn(
-        "flex gap-8 ",
-        isMobile ? "items-start flex-col" : "items-center",
+        "flex",
+        isMobile
+          ? "items-start flex-col gap-8"
+          : "items-center gap-3 xl:gap-4 2xl:gap-8",
         className
       )}
     >
@@ -35,18 +63,18 @@ export function Navigation({ className, onLinkClick }: NavigationProps) {
             isMobile ? "items-start w-full text-left" : "items-center"
           )}
         >
-          <Link
+          <a
             href={item.href}
-            onClick={onLinkClick}
+            onClick={(e) => handleClick(item.href, e)}
             className={cn(
-              "font-medium uppercase hover:text-[#57E0FF] transition-colors duration-200",
+              "font-medium uppercase hover:text-[#57E0FF] transition-colors duration-200 whitespace-nowrap cursor-pointer",
               isMobile
                 ? "text-(--text-white-accent) text-2xl w-full text-left font-medium leading-8"
-                : "text-(--text-dark-menu) text-sm leading-4"
+                : "text-(--text-dark-menu) text-xs xl:text-sm leading-4"
             )}
           >
             {item.label}
-          </Link>
+          </a>
         </div>
       ))}
     </nav>
