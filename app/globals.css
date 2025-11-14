@@ -41,6 +41,7 @@
 
   /* Цвета input-background */
   --input-background: #201A4F;
+  --input-tertiary-bg: #4A3BB3;
 
   /* Цвета кнопок-фон */
   --button-primary-bg: #57e1ff;
@@ -84,7 +85,7 @@
 
   /* Цвета input-background */
   --input-background: vars;
-
+  --input-tertiary-bg: var(--input-tertiary-bg);
   /* Цвета футера */
   --footer-nav-title: var(--footer-nav-title);
   --footer-menu: var(--footer-menu);
@@ -122,6 +123,54 @@ body {
 
 .deal-card-clip {
   clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%);
+}
+
+.deals-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(67, 79, 112, 0.4) transparent;
+}
+
+.deals-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.deals-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 56px;
+}
+
+.deals-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(67, 79, 112, 0.4);
+  border-radius: 56px;
+}
+
+.deals-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(67, 79, 112, 0.5);
+}
+
+@media (min-width: 768px) {
+  .deals-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(67, 79, 112, 0.4) transparent;
+  }
+
+  .deals-scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .deals-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 56px;
+  }
+
+  .deals-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(67, 79, 112, 0.4);
+    border-radius: 56px;
+  }
+
+  .deals-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(67, 79, 112, 0.5);
+  }
 }
 
 
